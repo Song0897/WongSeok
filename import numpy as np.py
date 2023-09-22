@@ -1,4 +1,5 @@
-# 내업무 자동화
+# 내업무 자동화  https://github.com/
+
 
 import pyodbc
 
