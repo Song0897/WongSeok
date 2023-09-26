@@ -1,0 +1,26 @@
+---
+title: "HTML 대시보드 템플릿"
+format:
+  html:
+    embed-resources: true
+    code-fold: true
+    theme: united
+---
+
+참고: https://quarto.org/docs/output-formats/html-basics.html
+
+::: {.panel-tabset}
+
+### 페이지 1
+
+```{python}
+1 + 1
+```
+
+### 페이지 2
+
+```{python}
+2 + 2
+```
+
+:::

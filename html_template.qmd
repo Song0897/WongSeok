@@ -1,0 +1,59 @@
+---
+title: "HTML 대시보드 템플릿"
+format:
+  html:
+    embed-resources: true
+    code-fold: true
+    theme: united
+---
+
+참고: https://quarto.org/docs/output-formats/html-basics.html
+
+::: {.panel-tabset}
+
+### 페이지 1
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 데이터프레임 생성 (월별 데이터 예시)
+data = {
+    '월': ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    '서울': [10, 15, 20, 22, 25, 30, 32, 29, 26, 20, 15, 12],
+    '수남': [9, 13, 18, 20, 23, 27, 28, 25, 22, 18, 13, 10],
+    '수북': [8, 12, 16, 18, 21, 25, 26, 24, 21, 16, 12, 9],
+    '부산': [12, 17, 22, 24, 27, 32, 34, 30, 27, 22, 17, 14],
+    '대구': [11, 16, 21, 23, 26, 31, 33, 28, 25, 21, 16, 13],
+    '서부': [9, 13, 18, 20, 23, 27, 29, 25, 21, 17, 13, 10],
+    '중부': [10, 14, 19, 21, 24, 29, 31, 28, 24, 20, 14, 11]
+}
+
+df = pd.DataFrame(data)
+
+# 그래프 그리기
+plt.figure(figsize=(12, 6))  # 그래프 크기 조정
+sns.set(style="whitegrid")  # 그래프 스타일 설정
+
+# 월별 기온 추이를 선 그래프로 표현
+for city in ['서울', '수남', '수북', '부산', '대구', '서부', '중부']:
+    sns.lineplot(x='월', y=city, data=df, label=city)
+
+plt.title('월별 기온 추이')
+plt.xlabel('월')
+plt.ylabel('기온 (°C)')
+plt.legend(loc='upper right')
+
+plt.show()
+
+
+```
+
+### 페이지 2
+
+```{python}
+2 + 2
+```
+
+:::
